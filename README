@@ -1,0 +1,7 @@
+If we want to start a custom instance of the service we can go with below command 
+
+mvn spring-boot:run -Dspring.boot.run.arguments=--spring.application.instance_id=test
+
+Below is the property which is used in the Eureka Client application which is used for creating multiple randon instance of the application
+
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
